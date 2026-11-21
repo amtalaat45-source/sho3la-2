@@ -9,14 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Shoala
 
     steps:
     - uses: actions/checkout@v4
     - name: set up JDK 17
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -31,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Shoala-Debug-APK
-        path: Shoala/app/build/outputs/apk/debug/*.apk
+        path: app/build/outputs/apk/debug/*.apk
